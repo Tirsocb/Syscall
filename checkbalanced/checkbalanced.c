@@ -31,19 +31,66 @@ void push(struct stackNode** top_ref, int my_data);
 int pop(struct stackNode** top_ref);
 
 /*
+Función para hacer push
+*/
+void push(struct stackNode** top_ref, int my_data)
+{
+    struct stackNode* newNode = (struct stackNode*) kmalloc(sizeof(struct stackNode), GFP_KERNEL);
+
+    if(newNode == NULL)
+    {
+        printk("Stack Overflow\n");
+    }
+
+    /*
+    Colocar el nodo en la data
+    */
+    newNode->data = my_data;
+
+    /*
+    Hacer link de la lista del nuevo nodo
+    */
+    newNode->next = (*top_ref);
+
+    /*
+    Mover el puntero al nuevo nodo
+    */
+    (*top_ref) = newNode;
+}
+
+/*
+Función para hacer pop
+*/
+int pop(struct stackNode** top_ref)
+{
+    char result;
+    struct stackNode* top;
+
+    if(*top_ref == NULL)
+    {
+        printk("Stack Overflow\n");
+        return 0;
+    }
+
+    /*
+    Si no hay error, entonces hacer pop del elemento correspondiente
+    y reubicar el puntero.
+    */
+    else{
+        top = *top_ref;
+        result = top->data;
+        *top_ref = top->next;
+        kfree(top);
+        return result;
+    }
+}
+
+/*
 Retorna 1, si el char1 y el char2 son brackets izquierdo y derecho respectivamente
 */
 bool isAMatch(char char1, char char2)
 {
-    if(char1 == '(' && char2 == ')' )
-    {
-        return 1;
-    }
-    else if (char1 == '{' && char2 == '}')
-    {
-        return 1;
-    }
-    else if (char1 == '[' && char2 == ']')
+    if((char1 == '(' && char2 == ')' ) || (char1 == '{' && char2 == '}') || (char1 == '[' && char2 == ']'))
     {
         return 1;
     }
@@ -52,6 +99,7 @@ bool isAMatch(char char1, char char2)
 }
 
 /*
+MACRO
 SYSCALL_DEFINEn para verificar el string ingresado
 1. Se debe ingresar el string
 2. Se debe ingresar el length del string
@@ -130,59 +178,3 @@ SYSCALL_DEFINE2(checkbalanced, char *, expression, int, n)
         return 0;
     }
 }
-
-/*
-Función para hacer push
-*/
-void push(struct stackNode** top_ref, int my_data)
-{
-    struct stackNode* newNode = (struct stackNode*) kmalloc(sizeof(struct stackNode), GFP_KERNEL);
-
-    if(newNode == NULL)
-    {
-        printk("Stack Overflow\n");
-    }
-
-    /*
-    Colocar el nodo en la data
-    */
-    newNode->data = my_data;
-
-    /*
-    Hacer link de la lista del nuevo nodo
-    */
-    newNode->next = (*top_ref);
-
-    /*
-    Mover el puntero al nuevo nodo
-    */
-    (*top_ref) = newNode;
-}
-
-/*
-Función para hacer pop
-*/
-int pop(struct stackNode** top_ref)
-{
-    char result;
-    struct stackNode* top;
-
-    if(*top_ref == NULL)
-    {
-        printk("Stack Overflow\n");
-        return 0;
-    }
-
-    /*
-    Si no hay error, entonces hacer pop del elemento correspondiente
-    y reubicar el puntero.
-    */
-    else{
-        top = *top_ref;
-        result = top->data;
-        *top_ref = top->next;
-        kfree(top);
-        return result;
-    }
-}
-

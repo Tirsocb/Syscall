@@ -15,8 +15,8 @@ proyecto 1 de la clase Sistemas Operativos UFM
 ***
 # Archivos
 1. Checkbalanced
-⋅⋅* Makefile
-⋅⋅* checkbalanced.c
+⋅⋅*Makefile
+⋅⋅*checkbalanced.c
 2. checkbalanced_test.c
 ***
 # Diagrama Syscall

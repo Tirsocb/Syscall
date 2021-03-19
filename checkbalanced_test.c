@@ -3,6 +3,7 @@
 #include <sys/syscall.h>
 #include <stdio.h>
 #include <linux/kernel.h>
+#include <string.h>
 
 /*
 Función principal para hacer el llamado al sistema
@@ -17,17 +18,15 @@ int main()
     scanf("%s", expression);
 
     /*
-    Insertar el lenght del char que se evalúa
+    Insertar el length del char que se evalúa
     */
-    int n;
-    printf("Insert expression lenght: ");
-    scanf("%d", &n);
+    int n = strlen(expression);
 
     // Para verificar el syscall
     long int res;
     
     /*
-    El syscall es el 441, se le envían la expresión y el lenght
+    El syscall es el 441, se le envían la expresión y el length
     */
     res = syscall(441, expression, n); 
     printf("Returned: %ld.\n", res);

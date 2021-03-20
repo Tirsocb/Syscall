@@ -1,7 +1,7 @@
 # Syscall Balanceo de expresiones aritméticas
-proyecto 1 de la clase Sistemas Operativos UFM
+Proyecto 1 de la clase Sistemas Operativos UFM
 ***
-# Indice
+# Índice
 [1. Archivos en el proyecto](#archivos)
 
 [2. Diagrama Syscall](#diagrama-syscall)
@@ -24,7 +24,9 @@ proyecto 1 de la clase Sistemas Operativos UFM
 
 
 # Requerimientos
-
+1. Computadora :computer:
+2. Visual Studio Code :spiral_notepad:
+3. Máquina Virtual (VirtualBox) :desktop_computer:
 
 # Cómo correr el proyecto
 

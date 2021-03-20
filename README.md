@@ -1,52 +1,55 @@
-# Syscall para verificar expresiones aritméticas balanceadas
+# Syscall para verificar expresiones aritméticas balanceadas :heavy_check_mark:
 Desarrollar una función que determine si una expresión aritmética se encuentra correctamente
 cerrada. La función deberá retornar `Is balanced` si la expresión está correctamente cerrada y `Not balanced` de lo
 contrario.
 
-Entiéndase por cerrada al hecho de que cada símbolo de paréntesis y/o corchete abierto debe tener
-su correspondiente cierre. Ejemplo (5+5), [(1+1)*(2+2)], (((([1])))).
+Se entiende por cerrada al hecho de que cada símbolo de paréntesis y/o corchete abierto debe tener su correspondiente cierre. 
+
+Ejemplos:
+- (5+5)[(1+1)*(2+2)]
+- (((([1]))))
 
 Dicha función debe de estar implementada en un system call.
 ***
-# Índice 
-- [1. Archivos en el proyecto](#archivos)
+# Índice :bow_and_arrow:
+- [1. Archivos en el proyecto](#archivos-:open_file_folder:)
 
-- [2. Diagrama Syscall](#diagrama-syscall)
+- [2. Diagrama Syscall](#diagrama-syscall-:bar_chart:)
 
-- [3. Requerimientos](#requerimientos)
+- [3. Requerimientos](#requerimientos-:pushpin:)
 
-- [4. Agregar syscall al kernel de Linux](#agregar-syscall-al-kernel-de-linux)
+- [4. Agregar syscall al kernel de Linux](#agregar-syscall-al-kernel-de-linux-:round_pushpin:)
 
-  * [4.1. Preparación](##preparación)
-  * [4.2. Creación](##creación)
-  * [4.3. Instalación](##instalación)
-  * [4.4. Resultado](##resultado)
+  * [4.1. Preparación](##preparación-:battery:)
+  * [4.2. Creación](##creación-:electric_plug:)
+  * [4.3. Instalación](##instalación-:inbox_tray:)
+  * [4.4. Resultado](##resultado-:test_tube:)
 
-- [5. Syscall en acción](#syscall-en-acción)
+- [5. Syscall en acción](#syscall-en-acción-:bulb:)
 
-- [6. Developers](#developers)
+- [6. Developers](#developers-:man_technologist:)
 
-- [7. Referencias](#referencias)
+- [7. Referencias](#referencias-:pen:)
 
 
-# Archivos
+# Archivos :open_file_folder:
 1. Checkbalanced
   * Makefile
   * checkbalanced.c
 2. checkbalanced_test.c
 
-# Diagrama Syscall
+# Diagrama Syscall :bar_chart:
 ![ScreenShot](https://github.com/Tirsocb/Syscall/blob/main/img/Diagrama.png)
 
 
-# Requerimientos
+# Requerimientos :pushpin:
 1. Computadora :computer:
 2. Visual Studio Code :spiral_notepad:
 3. Máquina Virtual (VirtualBox) con Ubuntu 20.04 LTS :desktop_computer:
 
-# Agregar syscall al kernel de Linux
+# Agregar syscall al kernel de Linux :round_pushpin:
 
-## Preparación
+## Preparación :battery:
 
 El proceso se realiza dentro de la máquina virtual instalada.
 
@@ -82,7 +85,7 @@ tar -xvf ~/linux-5.8.1.tar.xz -C ~/
 
 Reiniciar la máquina virtual
 
-## Creación
+## Creación :electric_plug:
 
 Cambiar al directorio del código fuente descomprimido
 
@@ -170,7 +173,7 @@ En este caso, 441 será el número del syscall añadido.
 
 Guardar los cambios realizados.
 
-## Instalación
+## Instalación :inbox_tray:
 
 Abrir la ventana de configuración con el comando
 
@@ -214,7 +217,7 @@ sudo update-grub
 
 Reiniciar la computadora
 
-## Resultado
+## Resultado 	:test_tube:
 
 Ejecute el siguiente comando para verificar la versión del kernel instalado. El resultado será `5.8.1`
 
@@ -248,7 +251,7 @@ Ejecutar el archivo C recién compilado
 
 Ingresar su expresión aritmética y esperar el resultado.
 
-# Syscall en acción
+# Syscall en acción :bulb:
 
 Test con corchetes, expresión balanceada.
 
@@ -262,16 +265,17 @@ Test con expresión matemática no balanceada.
 
 ![ScreenShot](https://github.com/Tirsocb/Syscall/blob/main/img/05.png)
 
-# Developers
+# Developers :man_technologist:
 
 [Abner Xocop Chacach](https://github.com/abnerxch) :ghost:
 
 [Tirso Córdova](https://github.com/Tirsocb) :robot:
 
-# Referencias
+# Referencias :pen:
+
 [Jihan Jasper Al-rashid](https://dev.to/jasper/adding-a-system-call-to-the-linux-kernel-5-8-1-in-ubuntu-20-04-lts-2ga8)
 
 [Aashiq Mohammed](https://github.com/AashiqMohammed/Data-Structures/blob/master/Parentheses%20Balance)
 
-# License
+# License :card_file_box:
 [MIT](https://choosealicense.com/licenses/mit/)

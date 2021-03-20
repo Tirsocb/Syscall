@@ -11,7 +11,7 @@ Función principal para hacer el llamado al sistema
 int main()
 {
     /*
-    Insertar el char a evaluar
+    Insertar el char a evaluar.
     */
     char expression[100];
     printf("Insert expression: ");

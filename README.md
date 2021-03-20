@@ -20,7 +20,7 @@ Proyecto 1 de la clase Sistemas Operativos UFM
 2. checkbalanced_test.c
 
 # Diagrama Syscall
-[Diagrama](https://github.com/Tirsocb/Syscall/blob/183b22015e7e0cf58484e33940a9756b2dc4bd55/Diagrama.png)
+![ScreenShot](https://github.com/Tirsocb/Syscall/blob/main/img/Diagrama.png)
 
 
 # Requerimientos
